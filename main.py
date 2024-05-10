@@ -5,11 +5,11 @@ from aiogram import Bot, Dispatcher, executor
 from aiogram.types import Message, CallbackQuery
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from dotenv import load_dotenv
-
 load_dotenv()
+from database import registruser
 
-
-
+bot = Bot(os.getenv('apitoken'))
+dp = Dispatcher(bot)
 
 knopka = ReplyKeyboardMarkup(resize_keyboard=True)
 knopka.add(
@@ -22,8 +22,7 @@ kanalbutton.add(
 )
 
 
-bot = Bot(os.getenv('apitoken'))
-dp = Dispatcher(bot)
+
 
 
 
